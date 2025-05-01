@@ -14,10 +14,9 @@ public class Main {
 
         System.out.println("Digite seu saldo:");
         double saldo = sc.nextDouble();
-
+        sc.nextLine();
         Usuario u1 = new Usuario(nome,saldo);
         while (n !=-1){
-            sc.nextLine();
             System.out.println("""
                     Opções de escolha:
                     Comprar produto,

@@ -43,8 +43,9 @@ public class Main {
                     String nomePP = sc.nextLine();
                     System.out.println("Digite o valor do produto:");
                     double valorPP = sc.nextDouble();
+                    sc.nextLine();
                     System.out.println("Digite a data de validade do produto:");
-                    String validade = sc.next();
+                    String validade = sc.nextLine();
                     try {
                         ProdutoPerecivel pp = new ProdutoPerecivel(nomePP, valorPP, validade);
                         c.Adicionar(u1, pp);

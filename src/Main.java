@@ -15,54 +15,61 @@ public class Main {
         System.out.println("Digite seu saldo:");
         double saldo = sc.nextDouble();
         sc.nextLine();
+
         Usuario u1 = new Usuario(nome,saldo);
         while (n !=-1){
             System.out.println("""
                     Opções de escolha:
-                    Comprar produto,
-                    Comprar produto perecivel,
+                    Adicionar produto,
+                    Adicionar produto perecivel,
                     Mostrar carrinho,
+                    Remover do carrinho,
+                    Comprar os produtos,
                     -1 para finalizar programa.
                     """);
             String minhaEsco = sc.nextLine();
             switch (minhaEsco){
-                case "Comprar produto":
-                    System.out.println("Digite o nome do produto:");
+                case "Adicionar produto":
+                    System.out.println("Digite o nome do produto e seu valor:");
                     String nomeP = sc.nextLine();
-                    System.out.println("Digite o valor desse produto:");
                     double valorP = sc.nextDouble();
-                   try {
-                       Produto p1 = new Produto(nomeP, valorP);
-                       c.Adicionar(u1, p1);
-                   }catch (SaldoInsuficienteException e){
-                       System.out.println(e.getMessage());
-                   }
+                    Produto p1 = new Produto(nomeP, valorP);
+                    c.Adicionar(p1);
+                    sc.nextLine();
                     break;
-                case"Comprar produto perecivel":
-                    System.out.println("Digite o nome do produto:");
+                case"Adicionar produto perecivel":
+                    System.out.println("Digite o nome do produto, seu valor e sua validade:");
                     String nomePP = sc.nextLine();
-                    System.out.println("Digite o valor do produto:");
                     double valorPP = sc.nextDouble();
                     sc.nextLine();
-                    System.out.println("Digite a data de validade do produto:");
                     String validade = sc.nextLine();
-                    try {
-                        ProdutoPerecivel pp = new ProdutoPerecivel(nomePP, valorPP, validade);
-                        c.Adicionar(u1, pp);
-                    }catch (SaldoInsuficienteException e){
-                        System.out.println(e.getMessage());
-                    }
+                    ProdutoPerecivel pp = new ProdutoPerecivel(nomePP, valorPP, validade);
+                    c.Adicionar(pp);
                     break;
                 case "Mostrar carrinho":
                     try {
-                        c.mostrarCarrinho();
+                        c.mostrarCarrinho(u1);
                     }catch (ListaVaziaExeption e2){
+                        System.out.println(e2.getMessage());
+                    }
+                    break;
+                case "Remover produto":
+                    System.out.println("Indique o produto que deseja remover pelo seu índicie:");
+                    int indicie = sc.nextInt();
+                    c.removerDoCarrinho(indicie);
+                    sc.nextLine();
+                    break;
+                case "Comprar os produtos":
+                    try {
+                     c.comprar(u1);
+                    }catch (SaldoInsuficienteException e2){
                         System.out.println(e2.getMessage());
                     }
                     break;
                 case "-1":
                     System.out.println("Finalizando programa....");
                     n = -1;
+                    break;
             }
         }
     }

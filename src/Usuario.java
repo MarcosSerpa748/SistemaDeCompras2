@@ -9,8 +9,7 @@ public class Usuario {
     public  Usuario(){
 
     }
-
-
+    @SuppressWarnings("unused")
     public String getNome() {
         return this.nome;
     }

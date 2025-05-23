@@ -1,3 +1,5 @@
+package br.com.classes;
+
 import br.com.Sistema.Exceptions.ListaVaziaExeption;
 import br.com.Sistema.Exceptions.SaldoInsuficienteException;
 
@@ -14,7 +16,7 @@ public class Carrinho extends Usuario {
 
     public void Adicionar(Produto p){
              carrinho.add(p);
-            System.out.println("Produto adicionado ao carrinho.");
+            System.out.println("br.com.classes.Produto adicionado ao carrinho.");
 
     }
     public void mostrarCarrinho(Usuario u){
@@ -30,7 +32,7 @@ public class Carrinho extends Usuario {
     }
     public void removerDoCarrinho(int indicie){
         carrinho.remove(indicie);
-        System.out.println("Produto removido do carrinho.");
+        System.out.println("br.com.classes.Produto removido do carrinho.");
     }
     public void comprar(Usuario u){
         double valorTotal = 0;

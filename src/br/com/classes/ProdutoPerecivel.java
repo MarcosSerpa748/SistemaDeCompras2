@@ -1,4 +1,6 @@
-public class ProdutoPerecivel extends Produto{
+package br.com.classes;
+
+public class ProdutoPerecivel extends Produto {
     private String validade;
 
     public ProdutoPerecivel(String nome, double valor,String validade){
@@ -12,6 +14,6 @@ public class ProdutoPerecivel extends Produto{
 
     @Override
     public String toString() {
-        return "Produto Perecível[Nome:"+getNome()+",Valor:R$"+getValor()+",Validade:"+getValidade()+"]";
+        return "br.com.classes.Produto Perecível[Nome:"+getNome()+",Valor:R$"+getValor()+",Validade:"+getValidade()+"]";
     }
 }

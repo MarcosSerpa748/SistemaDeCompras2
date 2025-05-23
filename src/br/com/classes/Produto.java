@@ -1,3 +1,5 @@
+package br.com.classes;
+
 public class Produto {
     private String nome;
     private double valor;
@@ -17,6 +19,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto[Nome:"+this.getNome()+",Valor:R$"+this.getValor()+"]";
+        return "br.com.classes.Produto[Nome:"+this.getNome()+",Valor:R$"+this.getValor()+"]";
     }
 }

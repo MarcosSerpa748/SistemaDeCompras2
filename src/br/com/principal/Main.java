@@ -1,5 +1,11 @@
+package br.com.principal;
+
 import br.com.Sistema.Exceptions.ListaVaziaExeption;
 import br.com.Sistema.Exceptions.SaldoInsuficienteException;
+import br.com.classes.Carrinho;
+import br.com.classes.Produto;
+import br.com.classes.ProdutoPerecivel;
+import br.com.classes.Usuario;
 
 import java.util.Scanner;
 

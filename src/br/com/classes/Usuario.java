@@ -1,3 +1,5 @@
+package br.com.classes;
+
 public class Usuario {
     protected String nome;
     protected double saldo;
